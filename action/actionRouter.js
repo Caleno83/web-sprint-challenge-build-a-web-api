@@ -20,15 +20,17 @@ router.get("/:id", validateActionId(), (req, res) => {
 });
 
 // request to add a new action
-router.post("/", validateAction(), async (req, res) => {
+router.post("/", validateAction(), async (req, res, next) => {
  try {
-    const actions = await actionModel.insert(req.body);
+
+    const actions = await actionModel.insert({ description: req.body.description, notes: req.body.notes, project_id: req.body.project_id });
 
     res.status(201).json(actions);
-  } catch (error) {
-    next(error);
+  } catch (err) {
+    next(err);
   } 
 });
+
 
 // request to change actions
 router.put("/:id", validateAction(), validateActionId(), async (req, res, next) => {
@@ -54,7 +56,7 @@ router.delete("/:id", validateActionId(), async (req, res, next) => {
 
     if (action > 0) {
       res.status(200).json({
-        message: "The action has been nuked",
+        message: "The action has been erased from this part of the Earth",
       });
     } else {
       res.status(404).json({

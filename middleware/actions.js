@@ -28,9 +28,9 @@ function validateActionId() {
         res.status(400).json({
           message: "missing Action Data",
         });
-      } else if (!req.body.description || !req.body.notes || !req.body.completed) {
+      } else if (!req.body.project_id || !req.body.description || !req.body.notes ) {
         res.status(400).json({
-          message: "missing required description, notes or completed field",
+          message: "missing required project_id, description, and notes field",
         });
       } else if (req.body.description > 127) {
         res.status(400).json({
