@@ -61,10 +61,47 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+
+The core features for node are :
+JavaScript on the server: 
+node use the same programming langage as a JS, and its helpful because it makes it easier to share code between client and server
+Single-threaded: it removes the complexity that is included in working with multiple threads
+Asynchronous: it can work in full advantage with the processor where its used, and this is important because node will work in a single CPU
+Npm repository: we can access to a large and useful libraries that some of them are free in the form of npm modules
+
+The code features for Express are :
+Express is one of the many modules of node and their core features are:
+Middleware: 
+we can use this feature when we need to request and/or response some objects, work on them, or trigger some actions like logging and security. 
+Routing: 
+with this feature, express can select which request handler funciton can be executed. it will do it with the URL visited, and the HTTP method used.
+Routers for Application Modularity: 
+when we break app into routers, one router can serve our SPA, and another our API. Each router will have its own middleware, and routing, and this combination will imporve functionality.
+Convenience Helpers: 
+express provide helpers to make writing web applications and API servers easier like response.status(), respnse.send(), and reques.ip
+Views: 
+they help to provide a better way to dynamically render HTML on the server, and generate it using other languages
+
 1. Understand and explain the use of Middleware?
+middleware are functions that are executed during the lifecycle of a request to the express server. Each middleware has access to the HTTP request and response for each route that is attached to.  These functions are used to modify  req and res objects for task like fetching req bodies , and/or adding respons headers.
+
 1. The basic principles of the REST architectural style.
+The principles of the Rest architectural style are:
+- everything is a resource.
+- each resource is accessible via a unique URL
+- resources can have multiple representations
+- communication happens over a stateless protocol (HTTP)
+- resource management happens via HTTP methods 
+
 1. Understand and explain the use of Express Routers.
+- Routing in express is when an application endpoint respond to client request.  we can do this by combining an HTTP request method or verb (get, post, put, delete), and a path pattern where whe define URLs in our app.
+
 1. Describe tooling used to manually test the correctness of an API.
+We can used for testing  the correctness of an API postman or inmsonia.  They will test, and each HTTP request method is valid, and the performance is good.
+
+You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
+
+------------------------------------------------------------------
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
